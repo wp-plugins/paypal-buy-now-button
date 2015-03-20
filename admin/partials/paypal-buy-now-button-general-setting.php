@@ -19,10 +19,8 @@ class MBJ_PayPal_Buy_Now_Button_General_Setting {
         add_action('paypal_buy_now_button_general_setting', array(__CLASS__, 'paypal_buy_now_button_general_setting_function'));
         add_action('paypal_buy_now_button_help_setting', array(__CLASS__, 'paypal_buy_now_button_help_setting'));
         add_action('paypal_buy_now_button_general_setting_save_field', array(__CLASS__, 'paypal_buy_now_button_general_setting_save_field'));
-      
     }
 
-    
     public static function help() {
 
 
@@ -45,7 +43,6 @@ class MBJ_PayPal_Buy_Now_Button_General_Setting {
                                           </ul>';
     }
 
-    
     public static function paypal_buy_now_button_setting_fields() {
 
         $currency_code_options = self::get_paypal_buy_now_button_currencies();
@@ -107,7 +104,7 @@ class MBJ_PayPal_Buy_Now_Button_General_Setting {
         );
 
 
-       
+
         $fields[] = array('type' => 'sectionend', 'id' => 'general_options');
 
         $fields[] = array('title' => __('Payment Button', 'paypal-buy-now-button'), 'type' => 'title', 'desc' => '', 'id' => 'general_options');
@@ -136,7 +133,6 @@ class MBJ_PayPal_Buy_Now_Button_General_Setting {
         $Html_output->save_fields($paypal_buy_now_button_setting_fields);
     }
 
-    
     public static function paypal_buy_now_button_help_setting() {
         ?>
         <div class="postbox">
@@ -172,7 +168,7 @@ class MBJ_PayPal_Buy_Now_Button_General_Setting {
                 </ul>
                 <br>
                 <h2> <label>Email dynamic tag list</label></h2>
-                <?php self::help(); ?>
+        <?php self::help(); ?>
             </div></div>
         <?php
     }
@@ -183,7 +179,7 @@ class MBJ_PayPal_Buy_Now_Button_General_Setting {
         ?>
 
         <form id="mailChimp_integration_form" enctype="multipart/form-data" action="" method="post">
-            <?php $Html_output->init($paypal_buy_now_button_setting_fields); ?>
+        <?php $Html_output->init($paypal_buy_now_button_setting_fields); ?>
             <p class="submit">
                 <input type="submit" name="mailChimp_integration" class="button-primary" value="<?php esc_attr_e('Save changes', 'Option'); ?>" />
             </p>
@@ -355,10 +351,6 @@ class MBJ_PayPal_Buy_Now_Button_General_Setting {
 
         return apply_filters('paypal_buy_now_button_currency_symbol', $currency_symbol, $currency);
     }
-    
-       
-    
-    
 
 }
 

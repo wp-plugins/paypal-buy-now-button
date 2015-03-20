@@ -19,8 +19,8 @@ Easy to use WordPress plugin to accept paypal payment for a service/ product/ do
 
 Insert the button in your pages or posts with this shortcode
 
-`[paypal_payment]`
-`[paypal_button item_name="abc" amount="50"]`
+`[paypal_buy_now_button]`
+`[paypal_buy_now_button item_name="abc" amount="50"]`
 
 [Shortcode attribute variable list] (https://developer.paypal.com/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/)
 

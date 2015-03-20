@@ -49,7 +49,7 @@ class MBJ_PayPal_Buy_Now_Button {
     public function __construct() {
 
         $this->plugin_name = 'paypal-buy-now-button';
-        $this->version = '1.0.0';
+        $this->version = '1.0.4';
 
         $this->load_dependencies();
         $this->set_locale();

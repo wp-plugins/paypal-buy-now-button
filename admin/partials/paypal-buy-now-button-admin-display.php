@@ -16,7 +16,7 @@ class MBJ_PayPal_Payment_Admin_Display {
      */
     public static function init() {
         add_action('admin_menu', array(__CLASS__, 'add_settings_menu'));
-        add_shortcode('paypal_button', array(__CLASS__, 'paypal_button_shortcode'));
+        add_shortcode('paypal_buy_now_button', array(__CLASS__, 'paypal_button_shortcode'));
         add_filter('widget_text', 'do_shortcode');
     }
 
@@ -57,13 +57,13 @@ class MBJ_PayPal_Payment_Admin_Display {
     }
 
     public static function paypal_button_shortcode($atts, $content = null) {
-        
+
         $paypal_buy_now_button_custom_button = get_option('paypal_buy_now_button_custom_button');
         $paypal_buy_now_button_return_page = get_option('paypal_buy_now_button_return_page');
         $paypal_buy_now_button_currency = get_option('paypal_buy_now_button_currency');
         $paypal_buy_now_button_bussiness_email = get_option('paypal_buy_now_button_bussiness_email');
         $paypal_payment_PayPal_sandbox = get_option('paypal_buy_now_button_PayPal_sandbox');
-      
+
 
         if (isset($paypal_payment_PayPal_sandbox) && $paypal_payment_PayPal_sandbox == 'yes') {
             $paypal_url = 'https://www.sandbox.paypal.com/cgi-bin/webscr';
@@ -77,10 +77,12 @@ class MBJ_PayPal_Payment_Admin_Display {
         $output = '<div class="page-sidebar widget">';
 
         $output .= '<form action="' . esc_url($paypal_url) . '" method="post" target="_blank">';
-        
-        foreach ( $atts as $attskey => $attsvalue ) {
-            if( (isset($attskey) && !empty($attskey)) && (isset($attsvalue) && !empty($attsvalue) )) {
-                $output .= '<input type="hidden" name="' . esc_attr($attskey) . '" value="' . esc_attr($attsvalue) . '">';
+
+        if (isset($atts) && !empty($atts)) {
+            foreach ($atts as $attskey => $attsvalue) {
+                if ((isset($attskey) && !empty($attskey)) && (isset($attsvalue) && !empty($attsvalue) )) {
+                    $output .= '<input type="hidden" name="' . esc_attr($attskey) . '" value="' . esc_attr($attsvalue) . '">';
+                }
             }
         }
 
