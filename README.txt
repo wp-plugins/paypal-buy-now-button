@@ -60,6 +60,10 @@ Easy steps to install the plugin:
 *	Go to Settings => Paypal Payment
 
 
+== Screenshots ==
+
+1. PayPal Buy Now Button
+
 == Changelog ==
 = 1.0.0 =
 *	Release Date - 12 March, 2015
