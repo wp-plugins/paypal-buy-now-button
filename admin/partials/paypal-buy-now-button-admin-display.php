@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @class       MBJ_PayPal_Payment_Admin_Display
+ * @class       MBJ_PayPal_Buy_Now_Button_Admin_Display
  * @version	1.0.0
  * @package	paypal-buy-now-button
  * @category	Class
  * @author      johnny manziel <phpwebcreators@gmail.com>
  */
-class MBJ_PayPal_Payment_Admin_Display {
+class MBJ_PayPal_Buy_Now_Button_Admin_Display {
 
     /**
      * Hook in methods
@@ -115,4 +115,4 @@ class MBJ_PayPal_Payment_Admin_Display {
 
 }
 
-MBJ_PayPal_Payment_Admin_Display::init();
+MBJ_PayPal_Buy_Now_Button_Admin_Display::init();
