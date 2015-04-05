@@ -49,7 +49,7 @@ class MBJ_PayPal_Buy_Now_Button {
     public function __construct() {
 
         $this->plugin_name = 'paypal-buy-now-button';
-        $this->version = '1.0.4';
+        $this->version = '1.0.5';
 
         $this->load_dependencies();
         $this->set_locale();
@@ -121,22 +121,10 @@ class MBJ_PayPal_Buy_Now_Button {
     private function define_admin_hooks() {
 
         $plugin_admin = new MBJ_PayPal_Buy_Now_Button_Admin($this->get_plugin_name(), $this->get_version());
+        $this->loader->add_filter('woocommerce_paypal_args', $plugin_admin, 'paypal_buy_now_button_for_woocommerce_standard_parameters', 99, 1);
     }
 
-    /**
-     * Register all of the hooks related to the public-facing functionality
-     * of the plugin.
-     *
-     * @since    1.0.0
-     * @access   private
-     */
-    private function define_public_hooks() {
-
-        $plugin_public = new MBJ_PayPal_Buy_Now_Button_Public($this->get_plugin_name(), $this->get_version());
-
-        $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles');
-        $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts');
-    }
+    
 
     /**
      * Run the loader to execute all of the hooks with WordPress.
