@@ -6,7 +6,7 @@
  * Plugin Name:       PayPal Buy Now Button
  * Plugin URI:        http://webs-spider.com/
  * Description:       Easy to use add a PayPal Buy Now Button as a Page, Post and Widget with a shortcode
- * Version:           1.0.6
+ * Version:           1.2.0
  * Author:            johnwickjigo
  * Author URI:        http://www.mbjtechnolabs.com
  * License:           GNU General Public License v3.0
